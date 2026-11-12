@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Horizon Hotel - จองห้องพักออนไลน์</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">Grand Horizon</div>
+        <nav>
+            <a href="#hero">หน้าแรก</a>
+            <a href="#rooms">ห้องพัก</a>
+            <a href="#facilities">สิ่งอำนวยความสะดวก</a>
+            <a href="#contact">ติดต่อเรา</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>สัมผัสประสบการณ์การพักผ่อนระดับพรีเมียม</h1>
+            <p>จองห้องพักวันนี้ รับส่วนลดพิเศษทันที</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-container">
+        <form id="search-form" class="search-form">
+            <div class="form-group">
+                <label for="search-checkin">วันเช็คอิน</label>
+                <input type="date" id="search-checkin" required>
+            </div>
+            <div class="form-group">
+                <label for="search-checkout">วันเช็คเอาท์</label>
+                <input type="date" id="search-checkout" required>
+            </div>
+            <div class="form-group">
+                <label for="search-guests">ผู้เข้าพัก</label>
+                <select id="search-guests">
+                    <option value="1">1 ท่าน</option>
+                    <option value="2" selected>2 ท่าน</option>
+                    <option value="4">4 ท่าน</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-primary">ค้นหาห้องว่าง</button>
+        </form>
+    </section>
+
+    <!-- Room Section -->
+    <section id="rooms" class="rooms-section">
+        <h2>ห้องพักของเรา</h2>
+        <div id="room-list" class="room-grid">
+            <!-- Render จาก JavaScript (mockData.js) -->
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2>รายละเอียดการจอง</h2>
+            <form id="booking-form">
+                <input type="hidden" id="selected-room-id">
+                
+                <div class="form-group">
+                    <label>ห้องพัก:</label>
+                    <input type="text" id="modal-room-name" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="guest-name">ชื่อ-นามสกุล</label>
+                    <input type="text" id="guest-name" required placeholder="นาย สมชาย ใจดี">
+                </div>
+                <div class="form-group">
+                    <label for="guest-phone">เบอร์โทรศัพท์</label>
+                    <input type="tel" id="guest-phone" required placeholder="0812345678">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="modal-checkin">เช็คอิน</label>
+                        <input type="date" id="modal-checkin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-checkout">เช็คเอาท์</label>
+                        <input type="date" id="modal-checkout" required>
+                    </div>
+                </div>
+                
+                <div class="price-summary">
+                    <p>จำนวน: <span id="total-nights">1</span> คืน</p>
+                    <h3>ราคารวมทั้งหมด: <span id="total-price">0</span> บาท</h3>
+                </div>
+
+                <button type="submit" class="btn-submit">ยืนยันการจอง</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script Links -->
+    <script src="js/mockData.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
